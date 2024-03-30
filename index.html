@@ -8,20 +8,26 @@
     <title>AI powered generator</title>
   </head>
   <body>
-    <header>
-      <h1>A poem generator</h1>
-    </header>
+    <header>A poem generator</header>
 
     <main>
-      <form>
-        <input
-          type="text"
-          placeholder="enter the topic of your desired poem"
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
+      <form id="search">
+        <p>
+          This is a poem about
+          <input
+            type="text"
+            id="generatePoem"
+            autocomplete="off"
+            placeholder="Femininity"
+            oninput="handleInput(event)"
+            onkeydown="handleInput(event)"
+            required
+          />.
+        </p>
       </form>
+
+      <div id="hiddenText"></div>
+
       <div id="poem" class="poem">
         Beneath society's scrutinizing gaze,<br />
         She dares to defy, to blaze her own ways.<br />

@@ -5,6 +5,8 @@ function generatePoem(event) {
   alert("Your poem is being written.");
 
   let poemElement = document.querySelector("#poem");
+
+  //Typewriter plugin
   new Typewriter("#poem", {
     strings: [
       " Beneath society's scrutinizing gaze,<br />She dares to defy, to blaze her own ways.<br />In equality's embrace, she finds her home,<br />Unshackled spirit, no longer alone.<br />Woman, stand tall, you're not just flesh and bone.",

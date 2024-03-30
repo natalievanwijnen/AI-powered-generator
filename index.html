@@ -9,48 +9,50 @@
     <title>A poem generator</title>
   </head>
   <body>
-    <header>A poem generator</header>
+    <div class="content">
+      <header>A poem generator</header>
 
-    <main>
-      <form id="search">
-        <p>
-          I want to read a poem about
-          <input
-            type="text"
-            id="generatePoem"
-            autocomplete="off"
-            placeholder="womanhood"
-            oninput="handleInput(event)"
-            onkeydown="handleInput(event)"
-            required
-          />.
-        </p>
-      </form>
+      <main>
+        <form id="search">
+          <p>
+            I want to read a poem about
+            <input
+              type="text"
+              id="generatePoem"
+              autocomplete="off"
+              placeholder="womanhood"
+              oninput="handleInput(event)"
+              onkeydown="handleInput(event)"
+              required
+            />.
+          </p>
+        </form>
 
-      <div id="hiddenText"></div>
+        <div id="hiddenText"></div>
 
-      <div id="poem" class="poem">
-        Beneath society's scrutinizing gaze,<br />
-        She dares to defy, to blaze her own ways.<br />
-        In equality's embrace, she finds her home,<br />
-        Unshackled spirit, no longer alone.<br />
-        Woman, stand tall, you're not just flesh and bone.
-      </div>
-    </main>
-    <footer>
-      Built with love by Natalie.
-      <br />
-      Open sourced on
-      <a
-        href="https://github.com/natalievanwijnen/AI-powered-generator"
-        target="_blank"
-        >GitHub</a
-      >
-      and hosted on
-      <a href="https://aipoweredgenerator.netlify.app/" target="_blank"
-        >Netlify</a
-      >.
-    </footer>
+        <div id="poem" class="poem">
+          Beneath society's scrutinizing gaze,<br />
+          She dares to defy, to blaze her own ways.<br />
+          In equality's embrace, she finds her home,<br />
+          Unshackled spirit, no longer alone.<br />
+          Woman, stand tall, you're not just flesh and bone.
+        </div>
+      </main>
+      <footer>
+        Built with love by Natalie.
+        <br />
+        Open sourced on
+        <a
+          href="https://github.com/natalievanwijnen/AI-powered-generator"
+          target="_blank"
+          >GitHub</a
+        >
+        and hosted on
+        <a href="https://aipoweredgenerator.netlify.app/" target="_blank"
+          >Netlify</a
+        >.
+      </footer>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>

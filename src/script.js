@@ -6,10 +6,15 @@ function generatePoem(event) {
 
   let poemElement = document.querySelector("#poem");
   new Typewriter("#poem", {
-    strings: ["This <br />is <br />a <br />test."],
+    strings: [
+      " Beneath society's scrutinizing gaze,<br />She dares to defy, to blaze her own ways.<br />In equality's embrace, she finds her home,<br />Unshackled spirit, no longer alone.<br />Woman, stand tall, you're not just flesh and bone.",
+    ],
     autoStart: true,
-    loop: false,
     cursor: "",
+    deleteSpeed: 40,
+    delay: 62,
+    pauseFor: 10000,
+    loop: false,
   });
 }
 

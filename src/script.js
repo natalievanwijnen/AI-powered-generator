@@ -2,8 +2,6 @@
 function generatePoem(event) {
   event.preventDefault();
 
-  alert("Your poem is being written.");
-
   let poemElement = document.querySelector("#poem");
 
   //Typewriter plugin

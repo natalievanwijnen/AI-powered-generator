@@ -1,7 +1,6 @@
 :root {
   --background: #f2ede6;
   --text: #111111;
-  --accents: #2000d3;
 }
 
 body {
@@ -11,6 +10,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+  line-height: 1.7;
 }
 
 header {

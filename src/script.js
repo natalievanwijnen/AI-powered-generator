@@ -1,3 +1,22 @@
+// Submit
+function generatePoem(event) {
+  event.preventDefault();
+
+  alert("Your poem is being written.");
+
+  let poemElement = document.querySelector("#poem");
+  new Typewriter("#poem", {
+    strings: ["This <br />is <br />a <br />test."],
+    autoStart: true,
+    loop: false,
+    cursor: "",
+  });
+}
+
+let poemFormelement = document.querySelector("form");
+poemFormelement.addEventListener("submit", generatePoem);
+
+// Input
 let SPACE_WIDTH = 8;
 
 function handleInput(event) {

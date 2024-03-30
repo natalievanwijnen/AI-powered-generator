@@ -6,30 +6,32 @@
     <link rel="stylesheet" href="src/style.css" />
     <link rel="stylesheet" href="https://use.typekit.net/nqe8jzd.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <title>A poem generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Poem library AI</title>
   </head>
   <body>
     <div class="content">
-      <header>A poem generator</header>
-
+      <header>
+        A poem library.
+        <br />
+        Stories and poets await.
+      </header>
       <main>
-        <form id="search">
+        <form id="search" onsubmit="generatePoem(event)">
           <p>
             I want to read a poem about
             <input
               type="text"
+              class="instruction"
               id="generatePoem"
-              autocomplete="off"
-              placeholder="womanhood"
               oninput="handleInput(event)"
               onkeydown="handleInput(event)"
+              autocomplete="off"
+              placeholder="womanhood"
               required
             />.
           </p>
         </form>
-
-        <div id="hiddenText"></div>
-
         <div id="poem" class="poem">
           Beneath society's scrutinizing gaze,<br />
           She dares to defy, to blaze her own ways.<br />
@@ -38,16 +40,17 @@
           Woman, stand tall, you're not just flesh and bone.
         </div>
       </main>
+      <div id="hiddenText" style="position: absolute; visibility: hidden"></div>
       <footer>
         Built with love by Natalie.
         <br />
-        Open sourced on
+        Shared on
         <a
           href="https://github.com/natalievanwijnen/AI-powered-generator"
           target="_blank"
           >GitHub</a
         >
-        and hosted on
+        and brought to life on
         <a href="https://aipoweredgenerator.netlify.app/" target="_blank"
           >Netlify</a
         >.

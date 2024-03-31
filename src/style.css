@@ -38,7 +38,7 @@ input {
   color: var(--text);
   font-family: "chandler-42-regular", sans-serif;
   font-size: 16px;
-  width: 90px;
+  width: 18px;
 }
 
 input:focus {
@@ -48,7 +48,8 @@ input:focus {
 }
 
 #generatePoem::placeholder {
-  color: var(--accent-color);
+  color: var(--text);
+
   font-family: "chandler-42-regular", sans-serif;
   font-style: normal;
   text-align: left;

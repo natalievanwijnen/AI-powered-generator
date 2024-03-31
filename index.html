@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="https://use.typekit.net/nqe8jzd.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <title>Poem library AI</title>
+    <title>A poetry lair</title>
   </head>
   <body>
     <div class="content">
       <header>
-        A poem library.
+        Welcome to this poetry lair,
         <br />
-        Stories and poets await.
+        Where tales bloom and poets dare.
+        <br />
+        With each verse, a voyage rare,
+        <br />
+        Inviting you to find what's hidden in there.
       </header>
       <main>
         <form id="search" onsubmit="generatePoem(event)">
@@ -27,22 +31,16 @@
               oninput="handleInput(event)"
               onkeydown="handleInput(event)"
               autocomplete="off"
-              placeholder="womanhood"
+              placeholder=".."
               required
             />.
           </p>
         </form>
-        <div id="poem" class="poem">
-          Beneath society's scrutinizing gaze,<br />
-          She dares to defy, to blaze her own ways.<br />
-          In equality's embrace, she finds her home,<br />
-          Unshackled spirit, no longer alone.<br />
-          Woman, stand tall, you're not just flesh and bone.
-        </div>
+        <div id="poem" class="poem"></div>
       </main>
       <div id="hiddenText" style="position: absolute; visibility: hidden"></div>
       <footer>
-        Built with love by Natalie.
+        Built with love by Natalie,
         <br />
         Shared on
         <a

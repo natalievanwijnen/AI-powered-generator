@@ -49,7 +49,6 @@ input:focus {
 
 #generatePoem::placeholder {
   color: var(--text);
-
   font-family: "chandler-42-regular", sans-serif;
   font-style: normal;
   text-align: left;

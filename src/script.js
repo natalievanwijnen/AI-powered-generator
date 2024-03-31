@@ -1,4 +1,4 @@
-// Input width flexibility
+// Dynamic input width
 let SPACE_WIDTH = 8;
 let lastWidth = 0;
 

@@ -3,21 +3,20 @@ let SPACE_WIDTH = 8;
 let lastWidth = 0;
 
 function handleInput(event) {
-  let inputElement = document.getElementById("generatePoem");
-  let placeholderWidth = getTextWidth(inputElement.placeholder);
-  let minWidth = 0;
+  const inputElement = event.target;
+  const inputValue = inputElement.value.trim();
+  const placeholderWidth = getTextWidth(inputElement.placeholder);
+
   let newWidth;
-
-  let inputValue = inputElement.value;
-
-  if (inputValue.trim() === "") {
+  if (inputValue === "") {
     newWidth = `${placeholderWidth}px`;
   } else {
-    let textWidth = getTextWidth(inputValue.replace(/\s/g, "&nbsp;"));
+    const textWidth = getTextWidth(inputValue.replace(/\s/g, "&nbsp;"));
+    const minWidth = 0;
     newWidth = `${Math.max(textWidth, minWidth)}px`;
 
-    let currentWidth = inputElement.offsetWidth;
-    let widthIncrease = currentWidth - lastWidth;
+    const currentWidth = inputElement.offsetWidth;
+    const widthIncrease = currentWidth - lastWidth;
     if (widthIncrease > SPACE_WIDTH) {
       newWidth = `${lastWidth + SPACE_WIDTH}px`;
     }
@@ -27,16 +26,15 @@ function handleInput(event) {
   lastWidth = inputElement.offsetWidth;
 }
 
+// Get width of text
 function getTextWidth(text) {
-  let hiddenText = document.getElementById("hiddenText");
+  const hiddenText = document.getElementById("hiddenText");
   hiddenText.innerHTML = text;
   return hiddenText.offsetWidth;
 }
 
 // Generate and display poem
 function displayPoem(response) {
-  document.getElementById("loadingMessage").remove();
-
   new Typewriter("#poem", {
     strings: response.data.answer,
     autoStart: true,
@@ -47,29 +45,27 @@ function displayPoem(response) {
   });
 }
 
+// Generate poem
 function generatePoem(event) {
   event.preventDefault();
 
-  document.getElementById("poem").innerHTML =
-    "<p id='loadingMessage'>Scouring the archives...</p>";
+  const poemElement = document.getElementById("poem");
+  poemElement.innerHTML = "<p id='loadingMessage'>Writing a masterpiece...</p>";
 
-  let instruction = document.getElementById("generatePoem").value;
-  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
-  let prompt = `I'm seeking a poem related to "${instruction}".
-  Do not generate a new poem; the poem must already exist.
-  The poem's title must not be revealed.
-  The poem cannot exceed 10 lines. 
-  Please strictly adhere to the following format: "poem" - "poet". Poem first, poet after, never a title.
-  Strongly prioritize works by recognized poets; however, if none exist on this topic, anonymous works can be an exception.
-  Please select poems that are artistic and heartfelt, avoiding mere narrative extracts and quotes.
-  Never provide any prompt confirmation like: "Sure, here is an existing poem about..." Or additional context like: "Poem: ..."`;
+  const instruction = document.getElementById("generatePoem").value;
+  const apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
+  const prompt = `Please generate a poem related to "${instruction}".
+   Your mission is to generate a poem that is a maximum of 5 lines long.
+   The poem must not include a title.`;
+  const context = `As a holder of a literary degree with expertise in poetry, your task is to present a single piece of poetry.
+   Do not provide supplementary information or ask additional questions.
+   Please generate poems that are artistic and heartfelt, avoiding mere narrative extracts and quotes.
+   Aim to create diverse poems that inspire and enrich.
+   Never provide any prompt confirmation like: "Sure, here is an existing poem about..." Or additional context like: "Poem: ..."
+  `;
+  const apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  let context = `As a holder of a literary degree with expertise in poetry, your task is to present a single piece of poetry.
-  Do not provide supplementary information or ask additional questions.
-  Aim to curate a diverse and captivating collection of poems that inspire and enrich, following the specified format rigorously.`;
-
-  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&key=${apiKey}`;
-
+  // Call API and display poem
   axios
     .get(apiURL)
     .then(displayPoem)
@@ -78,9 +74,9 @@ function generatePoem(event) {
     });
 }
 
-let poemFormElement = document.querySelector("#search");
+const poemFormElement = document.querySelector("#search");
 poemFormElement.addEventListener("submit", generatePoem);
 
-let inputElement = document.getElementById("generatePoem");
+const inputElement = document.getElementById("generatePoem");
 inputElement.addEventListener("input", handleInput);
 inputElement.addEventListener("keydown", handleInput);

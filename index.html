@@ -18,7 +18,7 @@
         <br />
         With each verse, a voyage rare,
         <br />
-        Inviting you to find what's hidden in there.
+        Enter a keyword to find what's hidden in there.
       </header>
       <main>
         <form id="search" onsubmit="generatePoem(event)">
@@ -31,23 +31,26 @@
               oninput="handleInput(event)"
               onkeydown="handleInput(event)"
               autocomplete="off"
-              placeholder="womanhood"
+              placeholder=""
               required
             />.
           </p>
         </form>
         <div id="poem" class="poem">
+          <!--
           Beneath society's scrutinizing gaze,<br />
           She dares to defy, to blaze her own ways.<br />
           In equality's embrace, she finds her home,<br />
           Unshackled spirit, no longer alone.<br />
           Woman, stand tall, you're not just flesh and bone. <br />
-          - anonymous
+          - anonymous -->
         </div>
       </main>
       <div id="hiddenText" style="position: absolute; visibility: hidden"></div>
       <footer>
-        Built with love by Natalie,
+        Built with love by
+        <a href="https://github.com/natalievanwijnen" target="_blank">Natalie</a
+        >,
         <br />
         Shared on
         <a

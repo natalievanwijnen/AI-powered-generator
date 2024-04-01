@@ -35,15 +35,18 @@ main {
 input {
   background: none;
   border: none;
+  border-bottom: 2px solid var(--accent-color);
   color: var(--text);
   font-family: "chandler-42-regular", sans-serif;
   font-size: 16px;
-  width: 87px;
+  width: 75px;
 }
 
 input:focus {
   background: none;
   border: none;
+  border-bottom: 2px solid var(--accent-color);
+
   outline: none;
 }
 
